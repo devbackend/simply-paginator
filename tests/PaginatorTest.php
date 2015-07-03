@@ -12,10 +12,10 @@ class PaginatorTest extends PHPUnit_Framework_TestCase  {
 
   public function testRender()
   {
-    $Paginator = new Paginator(60);
+    $Paginator = new Paginator(6, 1, 3);
 
     $generatedPagination = $Paginator->render();
-exit($generatedPagination);
+
     $this->assertStringStartsWith('<ul>', $generatedPagination);
     $this->assertStringEndsWith('</ul>', $generatedPagination);
   }
